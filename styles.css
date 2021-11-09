@@ -37,6 +37,7 @@ nav a {
     text-align: center;
     cursor: pointer;
     letter-spacing: 4px;
+    opacity: 1;
 }
 
 nav a:hover, nav a:hover b {
@@ -46,11 +47,10 @@ nav a:hover, nav a:hover b {
 header {
     position: relative;
     width: 100%;
-    height: 400px;
-    overflow: hidden;
+    height: 400px;    
 }
 
-header>img {    
+#portada {    
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -281,11 +281,42 @@ footer>h3 {
 
 @media screen and (max-width: 550px){
     nav {
-        padding: 8px 20px;
+        padding: 8px 5%;
     }
 
-    header>h1 {
-        font-size: 4.5vw;
+    nav a {
+        padding: 8px 0;
+    }    
+
+    header {
+        background-color: black; 
+        height: 250px;
+        transition: background-color 2s ease;
+        animation: cambio-back 8s linear 0s infinite alternate;       
+    }
+
+    #portada {
+        display: none;
+    }
+
+    header>h1 {        
+        font-size: 4.5vw; 
+        width: 90%;        
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);   
+        transition: color 2s ease;
+        animation: cambio-texto 8s linear 0s infinite alternate;      
+    }
+
+    @keyframes cambio-back {
+        from {background-color: black;}
+        to {background-color: white;}
+    }
+
+    @keyframes cambio-texto {
+        from {color: white;}
+        to {color: black;}
     }
 
     main {
