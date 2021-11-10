@@ -17,6 +17,17 @@ html,body {
     height: 100%;
 }
 
+body {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    animation: aparecer 1s linear 1s forwards; 
+}
+
+@keyframes aparecer {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 nav {
     width: 100%;
     position: fixed;
@@ -44,27 +55,17 @@ nav a:hover, nav a:hover b {
     background-color: lightgrey;
 }
 
-header {
-    position: relative;
+header {    
     width: 100%;
-    height: 400px;    
-}
-
-#portada {    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 100% 65%;    
-}
+    background-color: linear-gradient(to bottom right, red, yellow);
+    padding: 130px 0 50px 0;
+} 
 
 header>h1 {
     width: 75%;
+    margin: 0px auto;
     background-color: transparent;
-    color: white;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%); 
+    color: black;    
     font-size: 2.5vw;    
 }
 
@@ -242,7 +243,7 @@ footer>h3 {
         font-size: 3vw;
     }
 
-    #menu {
+    #uno, #dos, #tres {
         display: none;
     }
 
@@ -286,38 +287,16 @@ footer>h3 {
 
     nav a {
         padding: 8px 0;
-    }    
-
-    header {
-        background-color: black; 
-        height: 250px;
-        transition: background-color 2s ease;
-        animation: cambio-back 8s linear 0s infinite alternate;       
     }
 
-    #portada {
-        display: none;
+    header {
+        padding: 100px 0 10px 0;
     }
 
     header>h1 {        
         font-size: 4.5vw; 
-        width: 90%;        
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%,-50%);   
-        transition: color 2s ease;
-        animation: cambio-texto 8s linear 0s infinite alternate;      
-    }
-
-    @keyframes cambio-back {
-        from {background-color: black;}
-        to {background-color: white;}
-    }
-
-    @keyframes cambio-texto {
-        from {color: white;}
-        to {color: black;}
-    }
+        width: 90%;
+    }    
 
     main {
         width: 100%;        
