@@ -22,7 +22,7 @@
 <body>
     <nav>
         <div>
-            <a href="index.html"><b>nst.forward()</b></a>  
+            <a href="index.html"><b>nst.forward()</b></a>              
         </div>
         <div id="menu">
             <a id="uno" href="index.html#techs">Technologies</a>
@@ -236,4 +236,16 @@
         <h3>nst.forward()</h3>
     </footer>    
 </body>
+<script>
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop  > document.documentElement.clientHeight) {
+            let scrollpercent = (document.documentElement.scrollTop - document.documentElement.clientHeight) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+            let color = 255 - 20*scrollpercent;        
+            document.getElementsByTagName("html")[0].style.backgroundColor = `rgb(${color},${color},${color})`;
+            // document.documentElement.clientHeight = Altura del contenido de <html> en px
+            // document.documentElement.scrollHeight = Altura total de <html> en px
+            // document.documentElement.scrollTop = Progreso del scroll en px
+        }        
+    };
+</script>
 </html>
